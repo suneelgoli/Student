@@ -348,6 +348,8 @@ class Student
     }
     void print()
     {
+        System.out.println("---------------------------------------------------");
         System.out.println(rollNumber + " " + name + " " + section + " " + marks);
+        System.out.println("---------------------------------------------------");
     }
 }
