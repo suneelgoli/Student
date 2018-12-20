@@ -194,55 +194,76 @@ class StudentMainentance {
 
     void top3toppers()
     {
-        int topper1 = allStudents[0].marks;
-        int topper2 = allStudents[0].marks;
-        int topper3 = allStudents[0].marks;
-        int j=0,s=0,t=0;
+        Student[] SortArraym = new Student[50];
         for (int i = 0; i < allStudents.length; i++)
         {
-            if (allStudents[i] != null&&allStudents[i].marks > topper1)
+            if (allStudents[i] != null)
             {
-                topper1 = allStudents[i].marks;
-                j = i;
+                SortArraym[i] = allStudents[i];
             }
-        }
-        for (int i = 0; i < allStudents.length; i++) {
-            if (allStudents[i] != null&&(allStudents[i].marks > topper2 && allStudents[i].marks < topper1))
-            {
-                topper2 = allStudents[i].marks;
-                s = i;
-            }
-        }
-        for (int i = 0; i < allStudents.length; i++)
-        {
-            if (allStudents[i] != null&&(allStudents[i].marks > topper3 && allStudents[i].marks < topper2))
-            {
-                topper3 = allStudents[i].marks;
-                t=i;
-            }
-        }
-        allStudents[j].print();
-        allStudents[s].print();
-        allStudents[t].print();
-    }
-    void sortByName()
-    {
-        String temp;
-        for (int i = 0; i < nextStudentIndex; i++) {
-            for (int j = i + 1; j < nextStudentIndex; j++) {
 
-                if (allStudents[i] != null&&(allStudents[i].name.compareTo(allStudents[j].name) > 0)) {
-                    temp = allStudents[i].name;
-                    allStudents[i].name = allStudents[j].name;
-                    allStudents[j].name = temp;
+
+        }
+
+        Student temsMarks = null;
+        for (int i = 0; i < SortArraym.length - 1; i++)
+        {
+            for (int j = i + 1; j < SortArraym.length; j++)
+            {
+                if ((SortArraym[i] != null) && (SortArraym[j] != null))
+                {
+                    if (SortArraym[i].marks > SortArraym[j].marks)
+                    {
+                        temsMarks = SortArraym[i];
+                        SortArraym[i] = SortArraym[j];
+                        SortArraym[j] = temsMarks;
+                    }
                 }
             }
         }
-        for (int i=0;i<allStudents.length;i++)
+        int count = 0;
+        for (int i = SortArraym.length - 1; i >= 0; i--)
         {
-            if (allStudents[i]!=null)
-                allStudents[i].print();
+            if ((SortArraym[i] != null) && (count < 3))
+            {
+                SortArraym[i].print();
+                count++;
+
+            }
         }
+    }
+    void sortByName()
+    {
+
+        System.out.println("Sorted names -");
+        System.out.println("-----------------");
+        Student[] SortArray = new Student[50];
+        for (int i = 0; i < allStudents.length; i++) {
+            if (allStudents[i] != null) {
+                SortArray[i] = allStudents[i];
+            }
+
+
+        }
+
+        Student temp = null;
+        for (int i = 0; i < SortArray.length - 1; i++) {
+            for (int j = i + 1; j < SortArray.length; j++) {
+                if ((SortArray[i] != null) && (SortArray[j] != null)) {
+                    if (SortArray[i].name.compareTo(SortArray[j].name) > 0) {
+                        temp = SortArray[i];
+                        SortArray[i] = SortArray[j];
+                        SortArray[j] = temp;
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < SortArray.length; i++) {
+            if (SortArray[i] != null) {
+                SortArray[i].print();
+            }
+        }
+
     }
     void sortByMarksAsc()
     {
