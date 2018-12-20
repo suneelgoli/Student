@@ -7,7 +7,7 @@ import java.util.Scanner;
 }
 class StudentMainentance {
 
-    Student[] allStudents = new Student[50];
+    Student[] allStudents = new Student[100];
     int nextStudentIndex = 0;
     Scanner scanner = new Scanner(System.in);
 
@@ -201,7 +201,7 @@ class StudentMainentance {
 
     void top3toppers()
     {
-        Student[] SortArraym = new Student[50];
+        Student[] SortArraym = new Student[100];
         for (int i = 0; i < allStudents.length; i++)
         {
             if (allStudents[i] != null)
@@ -246,7 +246,7 @@ class StudentMainentance {
 
         System.out.println("Sorted names -");
         System.out.println("-----------------");
-        Student[] SortArray = new Student[50];
+        Student[] SortArray = new Student[100];
         for (int i = 0; i < allStudents.length; i++) {
             if (allStudents[i] != null) {
                 SortArray[i] = allStudents[i];
