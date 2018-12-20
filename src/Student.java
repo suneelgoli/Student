@@ -14,6 +14,7 @@ class StudentMainentance {
     public void process() {
         printHelp();
         setupSample();
+        System.out.println("---------------------------------------------------");
         System.out.println("Enter your choice:");
         while (true) {
             int input = scanner.nextInt();
@@ -71,6 +72,7 @@ class StudentMainentance {
     void showStudents()
     {
         boolean found = false;
+        System.out.println("---------------------------------------------------");
         for (int i = 0; i < allStudents.length; i++) {
             if (allStudents[i] != null) {
                 allStudents[i].print();
@@ -79,6 +81,7 @@ class StudentMainentance {
         }
         if (!found)
             System.out.println("No Records found");
+        System.out.println("---------------------------------------------------");
     }
 
     void addStudent()
@@ -163,6 +166,7 @@ class StudentMainentance {
         System.out.println("Enter student Section :");
         char section = scanner.next().charAt(0);
         boolean found = false;
+        System.out.println("---------------------------------------------------");
         for (int i = 0; i < allStudents.length; i++)
         {
             if (allStudents[i] != null && allStudents[i].section == section)
@@ -175,12 +179,14 @@ class StudentMainentance {
         if (!found) {
             System.out.println("No records found with Section like " + section);
         }
+        System.out.println("---------------------------------------------------");
 
     }
     void searchByGreaterThanMarks() {
         System.out.println("Enter student marks :");
         int marks = scanner.nextInt();
         boolean found = false;
+        System.out.println("---------------------------------------------------");
         for (int i = 0; i < allStudents.length; i++) {
             if (allStudents[i] != null && allStudents[i].marks > marks) {
                 allStudents[i].print();
@@ -190,6 +196,7 @@ class StudentMainentance {
         if (!found) {
             System.out.println("No records found with Greater than " + marks + " marks");
         }
+        System.out.println("---------------------------------------------------");
     }
 
     void top3toppers()
@@ -222,6 +229,7 @@ class StudentMainentance {
             }
         }
         int count = 0;
+        System.out.println("---------------------------------------------------");
         for (int i = SortArraym.length - 1; i >= 0; i--)
         {
             if ((SortArraym[i] != null) && (count < 3))
@@ -231,6 +239,7 @@ class StudentMainentance {
 
             }
         }
+        System.out.println("---------------------------------------------------");
     }
     void sortByName()
     {
@@ -258,11 +267,13 @@ class StudentMainentance {
                 }
             }
         }
+        System.out.println("---------------------------------------------------");
         for (int i = 0; i < SortArray.length; i++) {
             if (SortArray[i] != null) {
                 SortArray[i].print();
             }
         }
+        System.out.println("---------------------------------------------------");
 
     }
     void sortByMarksAsc()
@@ -281,11 +292,13 @@ class StudentMainentance {
                 }
             }
         }
+        System.out.println("---------------------------------------------------");
         for (int i=0;i<allStudents.length;i++)
         {
             if (allStudents[i]!=null)
                 allStudents[i].print();
         }
+        System.out.println("---------------------------------------------------");
 
     }
     void sortByMarksDesc()
@@ -304,15 +317,18 @@ class StudentMainentance {
                 }
             }
         }
+        System.out.println("---------------------------------------------------");
         for (int i=0;i<allStudents.length;i++)
         {
             if (allStudents[i]!=null)
                 allStudents[i].print();
         }
+        System.out.println("---------------------------------------------------");
 
     }
     void printHelp()
     {
+        System.out.println("---------------------------------------------------");
         System.out.println("Please use the following commands.");
         System.out.println("1. List");
         System.out.println("2. Add");
@@ -348,8 +364,8 @@ class Student
     }
     void print()
     {
-        System.out.println("---------------------------------------------------");
+
         System.out.println(rollNumber + " " + name + " " + section + " " + marks);
-        System.out.println("---------------------------------------------------");
+
     }
 }
