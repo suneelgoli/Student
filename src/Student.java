@@ -99,14 +99,24 @@ class StudentMainentance {
     {
         System.out.println("Enter the Which element ");
         int rollno = scanner.nextInt();
+        int count=0;
         for (int i = 0; i < allStudents.length; i++)
         {
             if (allStudents[i] != null) {
                 if (allStudents[i].rollNumber == rollno)
                 {
                     allStudents[i] = null;
+                    count++;
                 }
             }
+        }
+        if(count==0)
+        {
+            System.out.println("No Records Deleted");
+        }
+        else
+        {
+            System.out.println(count+"Records Deleted");
         }
     }
 
