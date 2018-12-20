@@ -15,7 +15,7 @@ class StudentMainentance {
         printHelp();
         setupSample();
         System.out.println("Enter your choice:");
-        while (scanner.hasNext()) {
+        while (true) {
             int input = scanner.nextInt();
             switch (input) {
                 case 1:
